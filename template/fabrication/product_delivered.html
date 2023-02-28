@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+      <style>
+    .videoBG {
+    position: fixed;
+    z-index:-1;
+    width:00%;
+    height:auto;
+}
+.button-24 {
+  background: #FF4742;
+  border: 1px solid #FF4742;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 16px;
+  min-height: 40px;
+  outline: 0;
+  padding: 12px 14px;
+  text-align: center;
+  text-rendering: geometricprecision;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+}
+
+.button-24:hover,
+.button-24:active {
+  background-color: initial;
+  background-position: 0 0;
+  color: #FF4742;
+}
+
+.button-24:active {
+  opacity: .5;
+
+
+
+</style>
+
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'delivery.css' %}">
+  <script  src="{% static 'delivery.js' %}"></script>
+
+</head>
+<body>
+<script>
+{% for msg in messages %}
+
+	 alert('{{ msg }}');
+{% endfor %}
+
+</script>
+<video class="videoBG" poster="poster.JPG" autoplay muted loop style="width:100%"; height="auto; position: fixed; z-index:-1;">
+  <source src="{% static 'video/delivery2.mp4' %}" type="video/mp4">
+</video>
+<!-- HTML !-->
+<!--<button  class="button-73" role="button" style="margin-left:600px; margin-top:320px; display: block;">PRODUCT DELIVERED</button>-->
+<!-- HTML !-->
+<a href="/f_index/"> <button class="button-24" role="button" id="button-24" style="visibility: hidden; margin-left:400px; margin-top:350px; width:50%"  >SUCCESSFULLY DELIVERED</button></a>
+<!--<button class="button" id="button"  >Button</button>-->
+<!--<h2 id="demo"> hello </h2>-->
+<script type="text/javascript">
+  function showlink() {
+          document.getElementById("button-24").style.visibility= "visible";
+
+  }
+      setTimeout("showlink()", 7000);
+
+
+      </script>
+
+
+
+
+
+
+
+
+</body>
+</html>

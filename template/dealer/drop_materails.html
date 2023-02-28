@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+{% extends "dealer/d_index.html" %}
+{% block content %}
+{% load static %}
+  <head>
+	  <style>
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+	  </style>
+  	<title>Table 01</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<link rel="stylesheet" href="{% static 'dealer/view_client/css/style.css' %}">
+
+	</head>
+	<body>
+	<script>
+{% for msg in messages %}
+
+	 alert('{{ msg }}');
+{% endfor %}
+
+</script>
+
+	<section class="ftco-section" style="margin-left:170px; width:220%" >
+		<div class="container" style="margin-left:70px;">
+			<div class="row justify-content-center" >
+				<div class="col-md-6 text-center mb-5" >
+					<h2 class="heading-section">Table #01</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+<!--					<div class="table-wrap" >-->
+						<table class="table" style="margin-left:-200px;">
+						  <thead class="thead-primary" style="background: #958DCF;">
+						  {% if datas %}
+						    <tr>
+						      <th>COMPUTER</th>
+						      <th>ELECTRONICS</th>
+								<th>CERAMICS</th>
+								<th>SUPPLY</th>
+						    </tr>
+						  </thead>
+						  <tbody>
+						  {% for data in datas %}
+						    <tr>
+						      <td> {{data.computer}}</td>
+						      <td> {{data.electronics}}</td>
+								<td> {{data.ceramics}}</td>
+								<td><a href="/C_d/{{data.id}}/" class="button" style="width:50%;">DROP</a></td>
+
+						    </tr>
+						  {% endfor %}
+<!--						    <tr>-->
+<!--						      <th scope="row">2</th>-->
+<!--						      <td>Jacob</td>-->
+<!--						      <td>Thornton</td>-->
+<!--						      <td>jacobthornton@email.com</td>-->
+<!--						    </tr>-->
+<!--						    <tr>-->
+<!--						      <th scope="row">3</th>-->
+<!--						      <td>Larry</td>-->
+<!--						      <td>the Bird</td>-->
+<!--						      <td>larrybird@email.com</td>-->
+<!--						    </tr>-->
+<!--						    <tr>-->
+<!--						      <th scope="row">4</th>-->
+<!--						      <td>John</td>-->
+<!--						      <td>Doe</td>-->
+<!--						      <td>johndoe@email.com</td>-->
+<!--						    </tr>-->
+<!--						    <tr>-->
+<!--						      <th scope="row">5</th>-->
+<!--						      <td>Gary</td>-->
+<!--						      <td>Bird</td>-->
+<!--						      <td>garybird@email.com</td>-->
+<!--						    </tr>-->
+						  </tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script src="{% static 'dealer/view_client/js/jquery.min.js' %}"></script>
+  <script src="{% static 'dealer/view_client/js/popper.js' %}"></script>
+  <script src="{% static 'dealer/view_client/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'dealer/view_client/js/main.js' %}"></script>
+
+	</body>
+{% else %}
+{% endif %}
+{% endblock %}
+</html>
+

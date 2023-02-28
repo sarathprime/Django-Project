@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="{% static 'admin/loading/style.css' %}" rel="stylesheet">
+
+</head>
+<body>
+
+<script>
+{% for msg in messages %}
+    setTimeout(function() { alert("completed sucessfully"); }, 6500)
+{% endfor %}
+
+
+
+</script>
+<!-- add with javascript -->
+<div class="container">
+  <h2>Progressing</h2>
+  <div class="progress"></div>
+</div>
+<!-- read document -->
+<a class="doc"  href="/Request/">MATERAIL INFO</a>
+
+
+</body>
+    <script src="{% static 'admin/loading/js/jv.js' %}"></script>
+</html>

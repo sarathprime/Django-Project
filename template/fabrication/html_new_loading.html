@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" >
+{% load static %}
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - fading loading screen</title>
+  <link href='https://fonts.googleapis.com/css?family=Droid+Sans:700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{% static 'bg.css' %}">
+  <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script  src="{% static 'ss.js' %}"></script>
+
+
+
+</head>
+<body>
+<script>
+{% for msg in messages %}
+
+	 alert('{{ msg }}');
+{% endfor %}
+
+</script>
+<!-- partial:index.partial.html -->
+
+<div class="loading" id="background"</div>
+<div class="home" id="homep">
+  <p class="home" id="sphere">SPHERE</p>
+</div>,
+<!-- partial -->
+
+
+
+</body>
+</html>

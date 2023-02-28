@@ -1,0 +1,97 @@
+<html lang="en">
+{% extends "admin/ai_index.html" %}
+{% load static %}
+{% block content %}
+<head>
+	<link rel="stylesheet" href="{% static 'admin/view_stock/style.css' %}">
+	<meta charset="utf-8" />
+	<title>Table Style</title>
+	<meta name="viewport" content="initial-scale=1.0; maximum-scale=1.0; width=device-width;">
+</head>
+
+<body>
+<script>
+{% for msg in messages %}
+
+	 alert('{{ msg }}');
+{% endfor %}
+
+</script>
+<style>
+.button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+</style>
+<div class="table-title">
+<h2 style="color:white;">CLIENT DETAIL</h2>
+</div>
+<table class="table-fill">
+<thead>
+<tr>
+<th class="text-left">COMPANY</th>
+<th class="text-left">EMAIL</th>
+<th class="text-left">CITY</th>
+<th class="text-left">STATE</th>
+<th class="text-left">PINCODE</th>
+<th class="text-left">COUNTRY</th>
+<th class="text-left">QUERIES</th>
+<th class="text-left">REQUIREMENT</th>
+</tr>
+</thead>
+	{% if datas %}
+<tbody class="table-hover">
+<tr>
+	{% for data in datas %}
+<td> {{data.company_name}}</td>
+            <td>{{data.email}}</td>
+            <td>{{data.city}}</td>
+            <td>{{data.state}}</td>
+            <td>{{data.pincode}}</td>
+	<td>{{data.country}}</td>
+	<td>{{data.message}}</td>
+	<td> <a href="/Request/"><button class="button">VIEW</button></a></td>
+	{% endfor %}
+</tr>
+<!--<tr>-->
+<!--<td class="text-left">February</td>-->
+<!--<td class="text-left">$ 10,000.00</td>-->
+<!--</tr>-->
+<!--<tr>-->
+<!--<td class="text-left">March</td>-->
+<!--<td class="text-left">$ 85,000.00</td>-->
+<!--</tr>-->
+<!--<tr>-->
+<!--<td class="text-left">April</td>-->
+<!--<td class="text-left">$ 56,000.00</td>-->
+<!--</tr>-->
+<!--<tr>-->
+<!--<td class="text-left">May</td>-->
+<!--<td class="text-left">$ 98,000.00</td>-->
+<!--</tr>-->
+</tbody>
+</table>
+  {% else %}
+{% endif %}
+{% endblock %}
+
+
+  </body>

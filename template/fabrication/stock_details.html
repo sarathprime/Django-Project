@@ -1,0 +1,139 @@
+
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html>
+{% extends "fabrication/fa_index.html" %}
+{% load static %}
+{% block content %}
+<head>
+<title>Doctor Availability Form Flat Responsive Widget Template :: w3layouts</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<meta name="keywords" content="Doctor Availability Form Bootstrap Responsive Templates, Iphone Compatible Templates, Smartphone Compatible Templates, Ipad Compatible Templates, Flat Responsive Templates"/>
+<link rel="stylesheet" href="{% static 'fabricator/stock/css/jquery-ui.css' %}" type="text/css" media="all">
+<link href="{% static 'fabricator/stock/css/wickedpicker.css' %}" rel="stylesheet" type='text/css' media="all" />
+<link href="{% static 'fabricator/stock/css/style.css' %}" rel='stylesheet' type='text/css' />
+<!--webfonts-->
+<link href="//fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
+<!--//webfonts-->
+
+</head>
+<body>
+<script>
+{% for msg in messages %}
+
+	 alert('{{ msg }}');
+{% endfor %}
+
+</script>
+<h1 style="margin-top:120px;"> STOCK DETAILS</h1>
+		<div class="containerw3layouts-agileits" style="width:50%;">
+			<div class="w3layoutscontactagileits">
+				
+					<div id="wrapper">
+							<form action="/stock/" method="post">
+								{% csrf_token %}
+								<div id="login" class="animate w3layouts agileits form">
+								<div class="ferry ferry-from">
+										<label>TEAM NAME:</label>
+										<input type="text" name="team_name" placeholder="Name" required=" ">
+									</div>
+									<div class="ferry ferry-from">
+										<label>EMAIL :</label>
+										<input type="text" name="email" placeholder="Name" required=" ">
+									</div>
+									<div class="ferry ferry-from" >
+										<label>CURRENT RAW MATERAILS :</label>
+										<br><br>
+								<h6 class="w3_field1" style="color:white;padding-bottom:0px; width:100%;">SILICON (<span id="chromiu">0</span>)
+                </h6>
+
+                <input name="silicon" type="range" min="0" max="500" value="17.00" step=0.01
+                       oninput="chromiu.innerText=this.value" style="display:inline; width:525px; height: 5px;">
+									<br><br>
+
+
+									<h6 class="w3_field1" style="color:white;padding-bottom:0px"><p>Nickel (<span id="nicke">9</span>)</p></h6>
+                <input name="nickel" type="range" min="0" max="500" value="9.00" step=0.01
+                       oninput="nicke.innerText=this.value" style="display:inline; width:525px; height: 5px;">
+									<br>
+                <br>
+
+									<h6 class="w3_field1" style="color:white;padding-bottom:0px">COPPER (<span id="titaniu">0.70</span>)</p>
+                <input name="copper" type="range" min="0" max="500" value="0.70" step=0.01
+                       oninput="titaniu.innerText=this.value" style="display:inline; width:525px; height: 5px;">
+                <br><br>
+										<h6 class="w3_field1" style="color:white;padding-bottom:0px">METAL (<span id="metl">0.70</span>)</p>
+                <input name="metal" type="range" min="0" max="500" value="0.70" step=0.01
+                       oninput="metl.innerText=this.value" style="display:inline; width:525px; height: 5px;">
+                <br>
+
+
+<!--
+									<div class="book-pag agileits w3layouts">
+										
+										<div class="book-pag-frm1 agileits w3layouts">
+											<label>Date Of Appointment :</label><input class="date agileits w3layouts" id="datepicker2" type="text" value="Date" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" required="">
+										</div>
+										<div class="clear"></div>
+									</div>
+									<div class="book-pag agileits w3layouts">
+										
+										
+										<div class="clear"></div>
+									</div>
+									<div class="tickets">
+										<div class="persons">
+											<label>Years Of Experience :</label>
+											<input type="number" name="Number" placeholder="1" required="">
+										</div>
+										<div class="persons">
+								    <label>Time :</label>	
+					<input type="text" id="timepicker" name="Time" class="timepicker form-control" value="">	
+									</div>
+
+<!--										<div class="clear"></div>-->
+<!--									</div>-->
+									<div class="ferry ferry-from">
+										<label>Queries :</label>
+										<textarea id="message" name="queries" placeholder="Your Queries" title="Please enter Your Queries"></textarea>
+<!--									</div>-->
+									<div class="wthreesubmitaits">
+										<input type="submit" name="submit" value="UPDATE">
+									</div>
+<!--								</div>-->
+								</form>
+						</div>
+			</div>
+		</div>
+		<div class="w3lsfooteragileits">
+<!--			<p> &copy; 2018 Doctor Availability Form. All Rights Reserved | Design by <a href="http://w3layouts.com" target="=_blank">W3layouts</a></p>-->
+		</div>
+		<!-- Necessary-JavaScript-Files-&-Links -->
+			<!-- Date-Picker-JavaScript -->
+<script type="text/javascript" src="{% static 'fabricator/stock/js/jquery-2.1.4.min.js' %}"></script>
+<script  src="{% static 'fabricator/stock/js/jquery-ui.js' %}"></script>	
+<script  src="{% static 'fabricator/stock/js/wickedpicker.js' %}"></script>	
+
+				<script type="text/javascript">
+					$(function() {
+						$( "#datepicker,#datepicker1,#datepicker2" ).datepicker();
+					});
+				</script>
+				
+			<script type="text/javascript">
+				$('.timepicker').wickedpicker({twentyFour: false});
+			</script>
+
+			<!-- //Date-Picker-JavaScript -->
+		<!-- //Necessary-JavaScript-Files-&-Links -->
+	
+
+</body>
+{% endblock %}
+</html>

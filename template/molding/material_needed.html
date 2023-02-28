@@ -1,0 +1,121 @@
+<!doctype html>
+{% extends "molding/molding_index.html" %}
+{% load static %}
+{% block content %}
+<html lang="en">
+  <head>
+	  <style>
+.button {
+  position: relative;
+  background-color: #4CAF50;
+  border: none;
+  font-size: 18px;
+  color: #FFFFFF;
+  padding: -10px;
+  width: 100px;
+  text-align: center;
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.button:after {
+  content: "";
+  background: #f1f1f1;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px !important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s
+}
+
+.button:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s
+}
+</style>
+  	<title>Table 07</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<link rel="stylesheet" href="{% static 'molding/View_Admin/css/style.css' %}">
+
+	</head>
+	<body>
+	<script>
+{% for msg in messages %}
+
+	 alert('{{ msg }}');
+{% endfor %}
+
+</script>
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<h2 class="heading-section" style="margin-left:2000px;">Table #07</h2>
+				</div>
+			</div>
+			<div class="row" style="margin-left:-500px;">
+				<div class="col-md-12" style="margin-left:200px;">
+<!--					<div class="table-wrap" style="margin-left:200px;">-->
+						<table class="table table-bordered table-dark table-hover" style="margin-left: 450px; width:0%; margin-top: 1	0px;">
+						  <thead>
+						    <tr>
+<!--						      <th>#</th>-->
+						      <th>PRODUCT</th>
+						      <th>QUANTAITY</th>
+						      <th>QUALITY</th>
+								<th>MATERIALS</th>
+<!--								<th>PRODUCT</th>-->
+<!--						      <th>SPECIFICATION</th>-->
+<!--						      <th>QUNTAITY</th>-->
+<!--								<th>MATERIALS NEED</th>-->
+<!--								<th>ACTION</th>-->
+						    </tr>
+						  </thead>
+							{% if datas %}
+						  <tbody>
+						  {% for data in datas %}
+						    <tr>
+						      <td> {{data.product}}</td>
+            <td>{{data.range}}</td>
+            <td>{{data.solutionss}}</td>
+<!--            <td>{{data.product}}</td>-->
+<!--            <td>{{data.product1}}</td>-->
+<!--	<td>{{data.product2}}</td>-->
+<!--	<td>{{data.quantatiy}}</td>-->
+<!--	<td>{{data.materails}}</td>-->
+	<td> <a href="/Teaam_register/"><button class="button">PURCHASE</button></a></td>
+								{% endfor %}
+
+						  </tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+<!--	<script src="{% static 'molding/View_Admin/js/jquery.min.js' %}"></script>-->
+<!--  <script src="{% static 'molding/View_Admin/js/popper.js' %}"></script>-->
+<!--  <script src="{% static 'molding/View_Admin/js/bootstrap.min.js' %}"></script>-->
+<!--  <script src="{% static 'molding/View_Admin/js/main.js' %}"></script>-->
+
+	</body>
+    {% else %}
+{% endif %}
+{% endblock %}
+
+</html>
+

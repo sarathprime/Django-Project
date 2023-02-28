@@ -1,0 +1,102 @@
+<html lang="en">
+{% extends "admin/ai_index.html" %}
+{% load static %}
+{% block content %}
+<head>
+	<link rel="stylesheet" href="{% static 'admin/view_stock/style.css' %}">
+	<meta charset="utf-8" />
+	<title>Table Style</title>
+	<meta name="viewport" content="initial-scale=1.0; maximum-scale=1.0; width=device-width;">
+</head>
+
+<body>
+<script>
+{% for msg in messages %}
+
+	 alert('{{ msg }}');
+{% endfor %}
+
+</script>
+<style>
+.button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+</style>
+<div class="table-title" style="width300%;">
+<h2 style="color:white;>CLIENT DETAIL</h2>
+</div>
+<table class="table-fill"  style="margin-left:-80px;  font-size:12px; ">
+<thead style="font-size:16px;">
+<tr>
+<th class="text-left" style="font:22px">COMPANY</th>
+<th class="text-left">EMAIL</th>
+<th class="text-left">TYPE</th>
+<th class="text-left">PRODUCT</th>
+<th class="text-left">SPECIFCATION</th>
+<th class="text-left">ADDITIONAL</th>
+<th class="text-left">QUNTAITY</th>
+<th class="text-left">QUERIES</th>
+	<th class="text-left">LOAD</th>
+	<th class="text-left">VIEW</th>
+</tr>
+</thead>
+	{% if datas %}
+<tbody class="table-hover" style="font:20px; width:200%;">
+<tr>
+	{% for data in datas %}
+<td> {{data.company_name}}</td>
+            <td>{{data.email}}</td>
+            <td>{{data.type}}</td>
+            <td>{{data.product}}</td>
+            <td>{{data.product1}}</td>
+	<td>{{data.product2}}</td>
+	<td>{{data.quantatiy}}</td>
+	<td>{{data.queries}}</td>
+	<td> <a href="/loading/"><button class="button">LOAD</button></a></td>
+	<td> <a href="/get_input/{{data.id}}"><button class="button">VIEW</button></a></td>
+<!--	<td> <a href="/loading/"><button class="button">ANALYSE</button></a></td>-->
+	{% endfor %}
+</tr>
+<!--<tr>-->
+<!--<td class="text-left">February</td>-->
+<!--<td class="text-left">$ 10,000.00</td>-->
+<!--</tr>-->
+<!--<tr>-->
+<!--<td class="text-left">March</td>-->
+<!--<td class="text-left">$ 85,000.00</td>-->
+<!--</tr>-->
+<!--<tr>-->
+<!--<td class="text-left">April</td>-->
+<!--<td class="text-left">$ 56,000.00</td>-->
+<!--</tr>-->
+<!--<tr>-->
+<!--<td class="text-left">May</td>-->
+<!--<td class="text-left">$ 98,000.00</td>-->
+<!--</tr>-->
+</tbody>
+</table>
+  {% else %}
+{% endif %}
+{% endblock %}
+
+
+  </body>

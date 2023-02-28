@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+{% extends "molding/molding_index.html" %}
+{% load static %}
+{% block content %}
+
+
+
+
+  <head>
+<!--      <script src="{% static 'molding/team_register/js/jv.js' %}"></script>-->
+      <link rel="stylesheet" href="{% static 'molding/team_register/css/style.css' %}">
+
+  </head>
+<body>
+<script>
+{% for msg in messages %}
+
+	 alert('{{ msg }}');
+{% endfor %}
+
+</script>
+
+<div class="container">
+	<form action="/Teaam_register/" method="post">
+		{% csrf_token %}
+	<!-- code here -->
+	<div class="card">
+		<div class="card-image">
+			<h2 class="card-heading">
+				Get started
+				<small>Let us create your account</small>
+			</h2>
+		</div>
+		<form class="card-form">
+			<div class="input">
+				<input type="text" class="input-field" value="" name="Team"/>
+				<label class="input-label">Team</label>
+			</div>
+						<div class="input">
+				<input type="text" class="input-field" value="" required name="Email"/>
+				<label class="input-label">Email</label>
+			</div>
+						<div class="input">
+<!--				<input type="text" class="input-field" required/>-->
+<!--				<label class="input-label">Password</label>-->
+			</div>
+			<div class="action">
+				<button class="action-button">Get started</button>
+			</div>
+		</form>
+		<div class="card-info">
+			<p>By signing up you are agreeing to our <a href="#">Terms and Conditions</a></p>
+		</div>
+	</div>
+		</form>
+
+</div>
+
+</body>
+{% endblock %}
+
+</html>

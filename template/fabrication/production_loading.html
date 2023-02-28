@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" >
+{% load static %}
+<head>
+  <style>
+    .videoBG {
+    position: fixed;
+    z-index:-1;
+    width:00%;
+    height:auto;
+
+}
+  </style>
+  <meta charset="UTF-8">
+  <title>CodePen - Only (S)CSS loading animation</title>
+  <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.6.1/css/all.css'>
+  <link rel="stylesheet" href="{% static 'production.css' %}">
+  <script  src="{% static 'production.js' %}"></script>
+
+
+</head>
+<body>
+<script>
+{% for msg in messages %}
+
+	 setTimeout(function() { alert("production completed sucessfully"); }, 5000)
+{% endfor %}
+
+</script>
+<video class="videoBG" poster="poster.JPG" autoplay muted loop style="width:100%"; height="auto; position: fixed; z-index:-1;">
+  <source src="{% static 'video/industry5.mp4' %}" type="video/mp4">
+</video>
+<div id="wrapper">
+  <div id="mouse"></div>
+  <div class="loader">
+  </div>
+  <div class="loading-bar">
+    <div class="progress-bar" style="width: 100% ;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+  </div>
+  <div class="status">
+    <div class="state"></div>
+    <div class="percentage"></div>
+  </div>
+</div>
+<a href="/final_p/" <button class="button-82-pushable" role="button" style="margin-left:-180px; margin-top:70px; visibility: hidden; width:15%;"  id="button-82-front" >
+  <span class="button-82-shadow"></span>
+  <span class="button-82-edge"></span>
+  <span class="button-82-front text" >
+    VIEW PRODUCTS
+  </span>
+</button>
+<!--<div id="button" style="visible:hidden;">-->
+<!--<button class="button">Button</button>-->
+<!--  </div>-->
+<!-- HTML !-->
+<script type="text/javascript">
+  function showlink() {
+          document.getElementById("button-82-front").style.visibility= "visible";
+  }
+
+      setTimeout("showlink()", 5500);
+
+
+      </script>
+
+
+
+<!-- partial -->
+
+
+</body>
+<!-- HTML !-->
+
+
+</html>
